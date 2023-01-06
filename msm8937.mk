@@ -9,6 +9,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/motorola/msm8937-common/msm8937-common-vendor.mk)
 
+#Hardware
+PRODUCT_BOARD_PLATFORM := $(msm8937) 
+PRODUCT_USES_QCOM_HARDWARE := true
+
+#HALs
+SRC_AUDIO_HAL_DIR := hardware/qcom-caf/$(msm8996)/audio 
+SRC_DISPLAY_HAL_DIR := hardware/qcom-caf/$(msm8996)/display 
+SRC_MEDIA_HAL_DIR := hardware/qcom-caf/$(msm8996)/media
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
